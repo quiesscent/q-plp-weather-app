@@ -32,11 +32,11 @@ A simple Django-based weather application that fetches and displays weather info
 ### Step 1: Set up the Project Environment
 
 ```bash
-//clone the repo 
+//clone the repo
 git clone https://github.com/quiesscent/q-plp-weather-app
 
 //navigate to folder
-cd q-plp-weather-app
+cd q-plp-weather-app/climate
 
 //create virtual environment
 python -m venv env
@@ -54,8 +54,5 @@ python manage.py runserver
 ```
 
 
-## Author 
+## Author
 [Ephesians Lewis](https://the-quiesscent-hub.vercel.app)
-
-
-
