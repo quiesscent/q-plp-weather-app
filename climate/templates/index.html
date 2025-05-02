@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>Weather App</title>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+            }
+        </style>
     </head>
     <body>
         <h1>Check Weather</h1>
@@ -11,10 +20,57 @@
             <button type="submit">Get Weather</button>
         </form>
         {% if data %}
-        <h2>Weather in {{ data.city }}</h2>
-        <p>Temperature: {{ data.temp }} &#8451;</p>
-        <p>Description: {{ data.descn }}</p>
-        <p>Humidity: {{ data.humidity }}%</p>
+        <h2>Weather in {{ data.name }}</h2>
+        <table>
+            <tr>
+                <th>Temperature (°C)</th>
+                <td>{{ data.main.temp }}</td>
+            </tr>
+            <tr>
+                <th>Feels Like (°C)</th>
+                <td>{{ data.main.feels_like }}</td>
+            </tr>
+            <tr>
+                <th>Minimum Temperature (°C)</th>
+                <td>{{ data.main.temp_min }}</td>
+            </tr>
+            <tr>
+                <th>Maximum Temperature (°C)</th>
+                <td>{{ data.main.temp_max }}</td>
+            </tr>
+            <tr>
+                <th>Pressure (hPa)</th>
+                <td>{{ data.main.pressure }}</td>
+            </tr>
+            <tr>
+                <th>Humidity (%)</th>
+                <td>{{ data.main.humidity }}</td>
+            </tr>
+            <tr>
+                <th>Wind Speed (m/s)</th>
+                <td>{{ data.wind.speed }}</td>
+            </tr>
+            <tr>
+                <th>Wind Degree</th>
+                <td>{{ data.wind.deg }}</td>
+            </tr>
+            <tr>
+                <th>Weather</th>
+                <td>{{ data.weather.0.description }}</td>
+            </tr>
+            <tr>
+                <th>Cloudiness (%)</th>
+                <td>{{ data.clouds.all }}</td>
+            </tr>
+            <tr>
+                <th>Visibility (m)</th>
+                <td>{{ data.visibility }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ data.sys.country }}</td>
+            </tr>
+        </table>
         {% endif %}
     </body>
 </html>
